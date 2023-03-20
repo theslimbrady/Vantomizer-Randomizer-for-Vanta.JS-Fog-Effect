@@ -68,4 +68,5 @@ button span:not(hover) {
 	text-align: center;
 	font-size: 32px;
 	font-weight: 600;
+ 	padding-bottom: 25px;
 }
