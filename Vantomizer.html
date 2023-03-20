@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanta.js Random Fog Effects</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.fog.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        font-family: 'Source Code Pro', monospace;
+    }
+    #info-box {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    font-weight: 400;
+  }
+  button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    font-family: 'Source Code Pro', monospace;
+    cursor: pointer;
+  }
+  button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+  }
+  button span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+  }
+  button span:not(hover) {
+    transition: all 1s;
+  }
+  
+  #heading {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+}
+  </style>
+</head>
+<body id="body">
+  <div id="info-box"></div>
+  <h1 id="heading">Brady's Vanta.JS Randomizer</h1>
+  <button id="randomize-button"><span>Randomize</span></button>
+  <script>
+    const randomInRange = (min, max) => Math.random() * (max - min) + min;
+
+    const randomHslColor = (hueRange, saturationRange, lightnessRange) => {
+  const hue = randomInRange(hueRange[0], hueRange[1]);
+  const saturation = randomInRange(saturationRange[0], saturationRange[1]);
+  const lightness = randomInRange(lightnessRange[0], lightnessRange[1]);
+
+  const hslColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+  const hexColor = parseInt(tinycolor(hslColor).toHex(), 16);
+  return hexColor;
+};
+
+const displayInfo = () => {
+  const infoBox = document.getElementById("info-box");
+  infoBox.innerHTML = `
+    Highlight Color: #${effect.options.highlightColor.toString(16)}<br>
+    Midtone Color: #${effect.options.midtoneColor.toString(16)}<br>
+    Lowlight Color: #${effect.options.lowlightColor.toString(16)}<br>
+    Base Color: #${effect.options.baseColor.toString(16)}<br>
+    Blur Factor: ${effect.options.blurFactor.toFixed(2)}<br>
+    Zoom: ${effect.options.zoom.toFixed(2)}<br>
+    Speed: ${effect.options.speed.toFixed(2)}
+  `;
+};
+
+let effect;
+
+const createEffect = () => {
+  if (effect) {
+    effect.destroy();
+  }
+
+  effect = VANTA.FOG({
+    el: "#body",
+    highlightColor: randomHslColor([0, 360], [70, 100], [70, 100]),
+    midtoneColor: randomHslColor([0, 360], [60, 100], [50, 70]),
+    lowlightColor: randomHslColor([0, 360], [50, 100], [40, 60]),
+    baseColor: randomHslColor([0, 360], [40, 100], [30, 50]),
+    blurFactor: randomInRange(0.6, 0.9),
+    zoom: randomInRange(0.3, 1.3),
+    speed: randomInRange(1, 3),
+  });
+
+
+  displayInfo();
+};
+
+document.getElementById("randomize-button").addEventListener("click", createEffect);
+createEffect();
+
+  </script>
+</body>
+</html>
