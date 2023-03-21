@@ -1,93 +1,89 @@
 html,
 body {
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	font-family: 'Source Code Pro', monospace;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Code Pro", monospace;
 }
 
 /* Styling for Info Box*/
 #info-box {
-	position: fixed;
-	top: 10px;
-	left: 10px;
-	padding: 10px;
-	background-color: rgba(255, 255, 255, 0.8);
-	border-radius: 5px;
-	font-weight: 400;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  font-weight: 400;
 }
 
 /* Styling for Randomize Button */
 #randomize-button {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 0.1em 0.25em;
-	width: 13em;
-	height: 4.2em;
-	background-color: #212121;
-	border: 0.08em solid #fff;
-	border-radius: 0.3em;
-	font-size: 12px;
-	font-family: 'Source Code Pro', monospace;
-	cursor: pointer;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.1em 0.25em;
+  width: 13em;
+  height: 4.2em;
+  background-color: #212121;
+  border: 0.08em solid #fff;
+  border-radius: 0.3em;
+  font-size: 12px;
+  font-family: "Source Code Pro", monospace;
+  cursor: pointer;
 }
 
 #randomize-button span {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	bottom: 0.4em;
-	width: 8.25em;
-	height: 2.5em;
-	background-color: #212121;
-	border-radius: 0.2em;
-	font-size: 1.5em;
-	color: #fff;
-	border: 0.08em solid #fff;
-	box-shadow: 0 0.4em 0.1em 0.019em #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0.4em;
+  width: 8.25em;
+  height: 2.5em;
+  background-color: #212121;
+  border-radius: 0.2em;
+  font-size: 1.5em;
+  color: #fff;
+  border: 0.08em solid #fff;
+  box-shadow: 0 0.4em 0.1em 0.019em #fff;
 }
 
 #randomize-button span:hover {
-	transition: all 0.5s;
-	transform: translate(0, 0.4em);
-	box-shadow: 0 0 0 0 #fff;
+  transition: all 0.5s;
+  transform: translate(0, 0.4em);
+  box-shadow: 0 0 0 0 #fff;
 }
 
 #randomize-button span:not(hover) {
-	transition: all 1s;
+  transition: all 1s;
 }
 
 /* Styling for Export Button */
 .export-button {
-    position: fixed;
-    bottom: 3%;
-    right: 2%;
-    z-index: 10; /* Ensures the button is on top of other elements */
-    transition: all 0.5s;
-    font-size: 17px;
-    padding: 1ch 2ch;
-    background-color: white;
-    color: #000;
-	font-family: 'Source Code Pro', monospace;
-    font-weight: 600;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    box-shadow: 2px 2px 0px hsl(0, 0%, 90%),
-      4px 4px 0px hsl(0, 0%, 80%),
-      6px 6px 0px hsl(0, 0%, 70%),
-      8px 8px 0px hsl(0, 0%, 60%),
-      10px 10px 0px hsl(0, 0%, 50%),
-      12px 12px 0px hsl(0, 0%, 40%),
-      14px 14px 0px hsl(0, 0%, 30%),
-      16px 16px 0px hsl(0, 0%, 20%),
-      18px 18px 0px hsl(0, 0%, 10%);
-}  
+  position: fixed;
+  bottom: 3%;
+  right: 2%;
+  z-index: 10; /* Ensures the button is on top of other elements */
+  transition: all 0.5s;
+  font-size: 17px;
+  padding: 1ch 2ch;
+  background-color: white;
+  color: #000;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 600;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px hsl(0, 0%, 90%), 4px 4px 0px hsl(0, 0%, 80%),
+    6px 6px 0px hsl(0, 0%, 70%), 8px 8px 0px hsl(0, 0%, 60%),
+    10px 10px 0px hsl(0, 0%, 50%), 12px 12px 0px hsl(0, 0%, 40%),
+    14px 14px 0px hsl(0, 0%, 30%), 16px 16px 0px hsl(0, 0%, 20%),
+    18px 18px 0px hsl(0, 0%, 10%);
+}
 
 .export-button:hover {
   background-color: hsl(0, 0%, 0%);
@@ -97,27 +93,27 @@ body {
 
 /* Styling for Heading */
 #heading {
-	position: fixed;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -100%);
-	text-align: center;
-	font-size: 32px;
-	font-weight: 600;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 /* Styling for Portfolio Link */
 #portfolio-link {
-    position: fixed;
-    top: 3%;
-    right: 2%;
-    z-index: 10;
-    font-size: 20px;
-    color: #000;
-	font-family: 'Source Code Pro', monospace;
-    text-decoration: none;
+  position: fixed;
+  top: 3%;
+  right: 2%;
+  z-index: 10;
+  font-size: 20px;
+  color: #000;
+  font-family: "Source Code Pro", monospace;
+  text-decoration: none;
 }
-  
+
 #portfolio-link:hover {
-    color: #FF8C42;
+  color: #ff8c42;
 }
