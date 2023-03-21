@@ -8,7 +8,7 @@ body {
 	font-family: 'Source Code Pro', monospace;
 }
 
-/* Info Box for Randomized Values */
+/* Styling for Info Box*/
 #info-box {
 	position: fixed;
 	top: 10px;
@@ -19,8 +19,8 @@ body {
 	font-weight: 400;
 }
 
-/* Custom CSS for Button (Credit @Web-Potato - https://uiverse.io/Web-Potato/silent-ape-24 */
-button {
+/* Styling for Randomize Button */
+#randomize-button {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -36,7 +36,7 @@ button {
 	cursor: pointer;
 }
 
-button span {
+#randomize-button span {
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -52,17 +52,50 @@ button span {
 	box-shadow: 0 0.4em 0.1em 0.019em #fff;
 }
 
-button span:hover {
+#randomize-button span:hover {
 	transition: all 0.5s;
 	transform: translate(0, 0.4em);
 	box-shadow: 0 0 0 0 #fff;
 }
 
-button span:not(hover) {
+#randomize-button span:not(hover) {
 	transition: all 1s;
 }
 
-/* Heading Text */
+/* Styling for Export Button */
+.export-button {
+    position: fixed;
+    bottom: 3%;
+    right: 2%;
+    z-index: 10; /* Ensures the button is on top of other elements */
+    transition: all 0.5s;
+    font-size: 17px;
+    padding: 1ch 2ch;
+    background-color: white;
+    color: #000;
+	font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px hsl(0, 0%, 90%),
+      4px 4px 0px hsl(0, 0%, 80%),
+      6px 6px 0px hsl(0, 0%, 70%),
+      8px 8px 0px hsl(0, 0%, 60%),
+      10px 10px 0px hsl(0, 0%, 50%),
+      12px 12px 0px hsl(0, 0%, 40%),
+      14px 14px 0px hsl(0, 0%, 30%),
+      16px 16px 0px hsl(0, 0%, 20%),
+      18px 18px 0px hsl(0, 0%, 10%);
+}  
+
+.export-button:hover {
+  background-color: hsl(0, 0%, 0%);
+  color: #fff;
+  box-shadow: none !important;
+}
+
+/* Styling for Heading */
 #heading {
 	position: fixed;
 	top: 40%;
@@ -71,5 +104,20 @@ button span:not(hover) {
 	text-align: center;
 	font-size: 32px;
 	font-weight: 600;
- 	padding-bottom: 25px;
+}
+
+/* Styling for Portfolio Link */
+#portfolio-link {
+    position: fixed;
+    top: 3%;
+    right: 2%;
+    z-index: 10;
+    font-size: 20px;
+    color: #000;
+	font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
+}
+  
+#portfolio-link:hover {
+    color: #FF8C42;
 }
