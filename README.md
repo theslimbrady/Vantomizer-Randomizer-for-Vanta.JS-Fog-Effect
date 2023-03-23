@@ -8,7 +8,7 @@ Uses the Vanta.js fog effect to generate random scenes and display the values fo
 
 ## Instructions
 
-Use the provided CodePen / live link to use the tool or host the files on your own server to use. When you find an effect you like note the values and use them in the https://www.vantajs.com/ tool or alter the code as desired to use in your own project:
+Use the provided CodePen / GitHub pages link to use the tool or host the files on your own server to use. When you find an effect you like note the values or use the "Copy Code" button (doesn't work on CodePen) and use them in the https://www.vantajs.com/ tool or alter the code as desired to use in your own project:
 
 ```
 <script src="three.r134.min.js"></script>
